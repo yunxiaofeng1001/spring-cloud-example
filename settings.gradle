@@ -1,0 +1,4 @@
+rootProject.name='spring-cloud-example'
+
+include 'backend-a'
+include 'backend-b'
