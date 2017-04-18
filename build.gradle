@@ -1,55 +1,22 @@
-buildscript {
-    ext {
-        springBootVersion = '1.4.3.RELEASE'
-    }
-    repositories {
-        mavenLocal()
-        maven { url "http://nexus.yintai.org:8081/nexus/content/groups/public" }
-        maven { url "http://maven.aliyun.com/nexus/content/repositories/central/" }
-        maven { url "http://maven.aliyun.com/nexus/content/repositories/gradleplugins/" }
-        maven { url "http://maven.aliyun.com/nexus/content/repositories/jcenter/" }
-        maven { url "https://repo.spring.io/snapshot" }
-        maven { url "https://repo.spring.io/milestone" }
-        mavenCentral()
-    }
-    dependencies {
-        classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
-        
-    }
-}
-
 allprojects {
-    group = "org.yun"
-    version '0.0.1-SNAPSHOT'
+    buildscript {
+        repositories {
+            mavenLocal()
+            maven { url "http://nexus.yintai.org:8081/nexus/content/groups/public" }
+            maven { url "http://maven.aliyun.com/nexus/content/repositories/central/" }
+            maven { url "http://maven.aliyun.com/nexus/content/repositories/gradleplugins/" }
+            maven { url "http://maven.aliyun.com/nexus/content/repositories/jcenter/" }
+            jcenter()
+            maven { url 'http://repo.spring.io/plugins-release' }
+        }
+    }
 
-    apply plugin: 'java'
-    apply plugin: 'eclipse'
-    apply plugin: 'idea'
-    apply plugin: 'groovy'
-    apply plugin: 'org.springframework.boot'
     repositories {
         mavenLocal()
         maven { url "http://nexus.yintai.org:8081/nexus/content/groups/public" }
         maven { url "http://maven.aliyun.com/nexus/content/repositories/central/" }
         maven { url "http://maven.aliyun.com/nexus/content/repositories/gradleplugins/" }
         maven { url "http://maven.aliyun.com/nexus/content/repositories/jcenter/" }
-        maven { url "https://repo.spring.io/snapshot" }
-        maven { url "https://repo.spring.io/milestone" }
-        mavenCentral()
-    }
-}
-
-subprojects {
-    sourceCompatibility = 1.8
-    targetCompatibility = 1.8
-
-    apply plugin: 'io.spring.dependency-management'
-
-    dependencyManagement {
-        imports {
-            mavenBom("org.springframework.boot:spring-boot-dependencies:${springBootVersion}")
-            mavenBom 'org.springframework.boot:spring-boot-starter-parent:Camden.SR4'
-//          mavenBom("org.springframework.boot:spring-boot-starter-parent:${springBootVersion}")
-        }
+        jcenter()
     }
 }
