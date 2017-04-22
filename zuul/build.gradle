@@ -1,6 +1,6 @@
 group 'org.yun.demo'
 version '1.0.0'
-description 'backend-a'
+description 'zuul'
 
 
 buildscript {
@@ -35,16 +35,12 @@ dependencies {
     compile 'org.springframework.cloud:spring-cloud-consul-discovery'
     compile 'org.springframework.cloud:spring-cloud-starter-consul'
     compile 'org.springframework.cloud:spring-cloud-starter-feign'
-    compile 'org.springframework.cloud:spring-cloud-starter-consul-config'
+    compile 'org.springframework.cloud:spring-cloud-starter-zuul'
     compile 'joda-time:joda-time:2.7'
     testCompile(
-                'org.springframework.boot:spring-boot-starter-test',
-                'org.spockframework:spock-core:1.0-groovy-2.4',
-                'org.spockframework:spock-spring:1.0-groovy-2.4'
-        )
+            'org.springframework.boot:spring-boot-starter-test',
+            'org.spockframework:spock-core:1.0-groovy-2.4',
+            'org.spockframework:spock-spring:1.0-groovy-2.4'
+    )
     testCompile('org.mock-server:mockserver-netty:3.10.2')
-
-}
-springBoot {
-    mainClass = 'com.yun.demo.BackendAApplication'
 }

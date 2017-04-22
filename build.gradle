@@ -2,10 +2,10 @@ allprojects {
     buildscript {
         repositories {
             mavenLocal()
-            maven { url "http://nexus.yintai.org:8081/nexus/content/groups/public" }
             maven { url "http://maven.aliyun.com/nexus/content/repositories/central/" }
             maven { url "http://maven.aliyun.com/nexus/content/repositories/gradleplugins/" }
             maven { url "http://maven.aliyun.com/nexus/content/repositories/jcenter/" }
+            maven { url "https://repo.spring.io/plugins-snapshot"}
             jcenter()
             maven { url 'http://repo.spring.io/plugins-release' }
         }
@@ -13,10 +13,10 @@ allprojects {
 
     repositories {
         mavenLocal()
-        maven { url "http://nexus.yintai.org:8081/nexus/content/groups/public" }
         maven { url "http://maven.aliyun.com/nexus/content/repositories/central/" }
         maven { url "http://maven.aliyun.com/nexus/content/repositories/gradleplugins/" }
         maven { url "http://maven.aliyun.com/nexus/content/repositories/jcenter/" }
+        maven { url "https://repo.spring.io/plugins-snapshot"}
         jcenter()
     }
 }

@@ -1,5 +1,5 @@
 
-server.port: 8080
+server.port: 1111
 server.ssl.enabled: false
 server.ssl.key-store: classpath:keystore.jks
 server.ssl.key-store-password: changeit
@@ -17,16 +17,17 @@ spring:
       host: 10.32.31.15
       discovery:
         ip-address: 10.32.43.41
-      config:
-        enabled: true
-        prefix: configuration
-        default-context: demo
-        profileSeparator: '::'
-        format: yaml
-        watch:
-          enabled: true
   application:
-    name: backend-a
+    name: api-gateway
+zuul:
+  routes:
+    backend-a:
+      path: /backend-a/**
+      serviceId: backend-a
+    backend-b:
+      path: /backend-b/**
+      serviceId: backend-b
+
 
 ---
 spring:

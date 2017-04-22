@@ -5,6 +5,7 @@ import org.springframework.web.bind.annotation.RequestMapping
 import org.springframework.web.bind.annotation.RequestMethod
 import org.springframework.web.bind.annotation.RestController
 import org.springframework.web.client.RestTemplate
+import org.yun.demo.service.BackendBService
 
 /**
  * Created by yunxiaofeng on 2017/4/18.
@@ -12,18 +13,22 @@ import org.springframework.web.client.RestTemplate
 @RestController
 class BackendBController {
 
-
-
-//    @Autowired
-//    BackendService backendService
-
     @Autowired
-    RestTemplate restTemplate;
+    BackendBService backendBService
+    @Autowired
+    BackendAService backendService
+//
+//    @Autowired
+//    RestTemplate restTemplate;
+
+    @RequestMapping(path = "/testadd", method = RequestMethod.GET)
+    public String testadd() {
+
+        return backendService.add(10,20)
 
 
-    @RequestMapping(path = "/testadd",method = RequestMethod.GET)
-    public String testadd(){
-        return restTemplate.getForEntity("http://backend-a/add?a=10&b=20",String.class).getBody()
+//        return backendBService.backendB(10,20)
+
     }
 
 

@@ -1,5 +1,6 @@
 
-server.port: 8080
+
+server.port: 8082
 server.ssl.enabled: false
 server.ssl.key-store: classpath:keystore.jks
 server.ssl.key-store-password: changeit
@@ -16,17 +17,15 @@ spring:
     consul:
       host: 10.32.31.15
       discovery:
-        ip-address: 10.32.43.41
+        instance-id: ${spring.application.name}-${spring.profiles}-${random.int}
       config:
         enabled: true
         prefix: configuration
         default-context: demo
         profileSeparator: '::'
         format: yaml
-        watch:
-          enabled: true
   application:
-    name: backend-a
+    name: web
 
 ---
 spring:
