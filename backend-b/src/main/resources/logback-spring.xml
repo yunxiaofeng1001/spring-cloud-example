@@ -8,7 +8,6 @@
             <appender-ref ref="CONSOLE"/>
         </root>
 
-        <logger name="com.yintai" level="DEBUG"/>
 
         <!--JPA 显示执行的SQL和参数-->
         <logger name="org.hibernate.SQL" level="DEBUG"/>
@@ -35,7 +34,6 @@
             <appender-ref ref="CONSOLE"/>
         </root>
 
-        <logger name="com.yintai" level="INFO"/>
     </springProfile>
 
 

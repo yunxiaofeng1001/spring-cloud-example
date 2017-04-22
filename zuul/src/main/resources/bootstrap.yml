@@ -1,8 +1,7 @@
 
 server.port: 1111
 server.ssl.enabled: false
-server.ssl.key-store: classpath:keystore.jks
-server.ssl.key-store-password: changeit
+
 spring:
   profiles:
     active: development
